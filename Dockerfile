@@ -10,9 +10,10 @@ RUN apt-get update && \
     chmod +x /opt/jfrog/jfrog && \
     ln -s /opt/jfrog/jfrog /usr/bin/jfrog
 
-RUN mkdir -p ~/.jfrog/security
+RUN mkdir -p /.jfrog/security
 
 ENV JFROG_CLI_OFFER_CONFIG false
+ENV JFROG_CLI_HOME /
 
 ENTRYPOINT [ "jfrog" ]
 # CMD ["help"]
